@@ -1,10 +1,8 @@
 import React from 'react'
 import List from './List'
-import { useTheme } from '@mui/material/styles'
 import { Button } from '@mui/material';
 
 function Dashboard() {
-  const theme = useTheme();
   return (
     <div>
         <Button color="primary"> Dashboard</Button>

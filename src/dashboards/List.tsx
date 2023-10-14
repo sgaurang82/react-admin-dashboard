@@ -1,9 +1,6 @@
-import { Grid, Accordion, AccordionSummary, Typography, AccordionDetails, Box, useTheme, Stack } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import { Accordion, AccordionSummary, Typography, AccordionDetails, Box, useTheme, Stack } from '@mui/material'
 import data from '../data/portfolio.json';
 import earningData from '../data/earningData.json';
-import axios from 'axios';
-import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 function List() {
   const theme = useTheme();
@@ -31,7 +28,7 @@ function List() {
                   {
                     if(index>10)
                     {
-                      return;
+                      return null;
                     }
                   return <Box component="span" sx={{ p: 2, border: '1px solid grey' }}><div>{(new Date(annualItem.fiscalDateEnding)).getFullYear()}</div><div>{annualItem.reportedEPS}</div></Box>
                   })
@@ -46,7 +43,7 @@ function List() {
               {
                 earningData.find((earningItem)=>earningItem.symbol === item.symbol)?.quarterlyEarnings.map(
                   (annualItem, index)=>{
-                    if(index > 10) return;
+                    if(index > 10) return null;
                     const date = new Date(annualItem.fiscalDateEnding);
                     const year = date.getFullYear();
                     const month = date.toLocaleString('default',{month:'short'});

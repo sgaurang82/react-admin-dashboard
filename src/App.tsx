@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import './App.css';
 
 import theme from './themes';
 
 import { ThemeProvider } from "@mui/material/styles";
-import Dashboard from './dashboards';
 import CssBaseline from "@mui/material/CssBaseline";
 import Layout from './layout';
 import axios from 'axios';
