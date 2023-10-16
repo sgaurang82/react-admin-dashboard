@@ -1,7 +1,12 @@
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { useState } from "react";
-import { Menu, MenuItem, Sidebar as SidebarPro } from "react-pro-sidebar";
+import {
+  Menu,
+  MenuItem,
+  Sidebar as SidebarPro,
+  menuClasses,
+} from "react-pro-sidebar";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 // import "react-pro-sidebar/dist/css/styles.css";
 
@@ -14,21 +19,6 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
-        },
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
-        },
-        "& .pro-menu-item.active": {
-          color: "#6870fa !important",
-        },
         display: "flex",
         height: "100%",
       }}
@@ -39,15 +29,21 @@ const Sidebar = () => {
             onClick={() => setIsCollepsed(!isCollepsed)}
             icon={isCollepsed ? <MenuOutlinedIcon /> : undefined}
             // icon={<MenuOutlinedIcon />}
+            rootStyles={{
+              ["." + menuClasses.button]: {
+                "&:hover": {
+                  backgroundColor: "transparent !important",
+                },
+              },
+            }}
             style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
           >
             {!isCollepsed && (
               <Box>
-                {" "}
-                <Typography>Vyakar</Typography>{" "}
+                <Typography>Vyakar</Typography>
                 <IconButton>
                   <MenuOutlinedIcon />
-                </IconButton>{" "}
+                </IconButton>
               </Box>
             )}
           </MenuItem>
