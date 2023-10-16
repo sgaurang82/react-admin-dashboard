@@ -3,6 +3,7 @@ import { tokens } from "../../theme";
 import { useState } from "react";
 import { Menu, MenuItem, Sidebar as SidebarPro } from "react-pro-sidebar";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+// import "react-pro-sidebar/dist/css/styles.css";
 
 const Sidebar = () => {
   const theme = useTheme();
@@ -28,6 +29,8 @@ const Sidebar = () => {
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
         },
+        display: "flex",
+        height: "100%",
       }}
     >
       <SidebarPro collapsed={isCollepsed} backgroundColor={colors.primary[400]}>
