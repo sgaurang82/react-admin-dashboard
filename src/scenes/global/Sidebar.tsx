@@ -8,7 +8,7 @@ import {
   menuClasses,
 } from "react-pro-sidebar";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import TroubleshootIcon from "@mui/icons-material/Troubleshoot";
+import FilterVintageIcon from "@mui/icons-material/FilterVintage";
 // import "react-pro-sidebar/dist/css/styles.css";
 
 const Sidebar = () => {
@@ -29,6 +29,7 @@ const Sidebar = () => {
           ["." + menuClasses.button]: {
             "&:hover": {
               backgroundColor: "transparent !important",
+              color: "#868dfb !important",
             },
           },
         }}
@@ -38,7 +39,7 @@ const Sidebar = () => {
         <Menu>
           <MenuItem
             onClick={() => setIsCollepsed(!isCollepsed)}
-            icon={isCollepsed ? <TroubleshootIcon /> : undefined}
+            icon={isCollepsed ? <FilterVintageIcon /> : undefined}
             // icon={<MenuOutlinedIcon />}
 
             style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
@@ -46,8 +47,10 @@ const Sidebar = () => {
             {!isCollepsed && (
               <Box display="flex" justifyContent="space-between">
                 <Box display="flex">
-                  <TroubleshootIcon />
-                  <Typography>Vyakar</Typography>
+                  <FilterVintageIcon fontSize="large" />
+                  <Typography sx={{ marginLeft: "10px" }} variant="h3">
+                    Vyakar
+                  </Typography>
                 </Box>
                 <Box display="flex">
                   <IconButton>
