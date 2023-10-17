@@ -1,6 +1,6 @@
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import {
   Menu,
   MenuItem,
@@ -9,13 +9,40 @@ import {
 } from "react-pro-sidebar";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 // import "react-pro-sidebar/dist/css/styles.css";
+interface ItemProps {
+  title: string;
+  to: string;
+  icon: ReactNode;
+  selected: string;
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
+}
+const Item = (props: ItemProps) => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  return (
+    <MenuItem
+      active={props.selected == props.title}
+      style={{ color: colors.grey[100] }}
+      icon={props.icon}
+      onClick={() => {
+        props.setSelected(props.title);
+      }}
+      href={props.to}
+    >
+      <Typography>{props.title}</Typography>
+      {/* <Link to={props.to} /> */}
+    </MenuItem>
+  );
+};
 
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollepsed, setIsCollepsed] = useState(false);
-  // const [selected, setSelected] = useState("Dashboard");
+  const [selected, setSelected] = useState("Dashboard");
 
   return (
     <Box
@@ -60,10 +87,24 @@ const Sidebar = () => {
               </Box>
             )}
           </MenuItem>
-          <MenuItem active>Documentation</MenuItem>
-          <MenuItem> Calendar</MenuItem>
-          <MenuItem> E-commerce</MenuItem>
-          <MenuItem> Examples</MenuItem>
+
+          <Box paddingLeft={isCollepsed ? undefined : "10%"}>
+            <Item
+              title="Dashboard"
+              to="/"
+              icon={<HomeOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography>Data</Typography>
+            <Item
+              title="Manage Team"
+              to="/team"
+              icon={<PeopleOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+          </Box>
         </Menu>
       </SidebarPro>
     </Box>
