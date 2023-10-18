@@ -1,8 +1,7 @@
 import { Box, Button, TextField, useMediaQuery } from "@mui/material";
 import Header from "../../components/Header";
-import { Formik, FormikProps, FormikValues } from "formik";
+import { Formik, FormikProps } from "formik";
 import * as yup from "yup";
-import { FormEventHandler } from "react";
 
 interface FormValues {
   firstName: string;
