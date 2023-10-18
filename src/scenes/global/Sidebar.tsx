@@ -13,6 +13,8 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import { Link } from "react-router-dom";
 // import "react-pro-sidebar/dist/css/styles.css";
 interface ItemProps {
   title: string;
@@ -32,10 +34,13 @@ const Item = (props: ItemProps) => {
       onClick={() => {
         props.setSelected(props.title);
       }}
-      href={props.to}
+      component={<Link to={props.to} />}
+
+      // href={props.to}
     >
       <Typography>{props.title}</Typography>
       {/* <Link to={props.to} /> */}
+      {/* <Link to={props.to}></Link> */}
     </MenuItem>
   );
 };
@@ -98,7 +103,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography>Data</Typography>
+            <Typography
+              variant="h6"
+              color={colors.greenAccent[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Data
+            </Typography>
             <Item
               title="Manage Team"
               to="/team"
@@ -117,6 +128,20 @@ const Sidebar = () => {
               title="Invoices Balances"
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography
+              variant="h6"
+              color={colors.greenAccent[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Pages
+            </Typography>
+            <Item
+              title="Profile Form"
+              to="/form"
+              icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
