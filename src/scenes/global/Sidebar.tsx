@@ -11,6 +11,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 // import "react-pro-sidebar/dist/css/styles.css";
 interface ItemProps {
   title: string;
@@ -101,6 +102,13 @@ const Sidebar = () => {
               title="Manage Team"
               to="/team"
               icon={<PeopleOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Contacts Information"
+              to="/contacts"
+              icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
