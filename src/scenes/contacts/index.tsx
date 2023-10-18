@@ -3,9 +3,6 @@ import { DataGrid, GridToolbar, GridColDef } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import { mockDataContacts } from "../../data/mockData";
 
 const Contacts = () => {
