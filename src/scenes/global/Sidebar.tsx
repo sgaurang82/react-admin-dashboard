@@ -18,6 +18,8 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
+import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { Link } from "react-router-dom";
 // import "react-pro-sidebar/dist/css/styles.css";
 interface ItemProps {
@@ -181,6 +183,20 @@ const Sidebar = () => {
               title="Pie Chart"
               to="/pie"
               icon={<PieChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Line Chart"
+              to="/line"
+              icon={<TimelineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Geography Chart"
+              to="/geography"
+              icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

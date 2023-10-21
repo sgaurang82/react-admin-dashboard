@@ -40,6 +40,11 @@ const BarChart = (props: IProps) => {
             fill: colors.grey[100],
           },
         },
+        tooltip: {
+          container: {
+            color: colors.primary[500],
+          },
+        },
       }}
       keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
       indexBy="country"
