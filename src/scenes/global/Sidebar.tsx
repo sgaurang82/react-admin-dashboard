@@ -71,6 +71,7 @@ const Sidebar = () => {
             },
           },
         }}
+        style={{ border: "none" }}
         collapsed={isCollepsed}
         backgroundColor={colors.primary[400]}
       >
