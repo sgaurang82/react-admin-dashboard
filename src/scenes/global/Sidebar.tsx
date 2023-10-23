@@ -41,8 +41,6 @@ const Item = (props: ItemProps) => {
         props.setSelected(props.title);
       }}
       component={<Link to={props.to} />}
-
-      // href={props.to}
     >
       <Typography>{props.title}</Typography>
       {/* <Link to={props.to} /> */}
